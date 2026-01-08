@@ -10,7 +10,7 @@ Sitio web de portafolio desarrollado como una aplicación frontend moderna, con 
 
 ## Demo
 
-[https://USUARIO.github.io/NOMBRE_REPO/](https://richardrc1994.github.io/portafolio/)
+[Portafolio](https://richardrc1994.github.io/portafolio/)
 
 
 ---
@@ -35,5 +35,6 @@ Está diseñado para ser ligero, rápido y compatible tanto con ejecución local
 - Animaciones al hacer scroll
 - Diseño responsivo
 - Estilos minimalistas con estética tecnológica
+
 
 
