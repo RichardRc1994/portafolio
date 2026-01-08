@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio</title>
+  <meta name="description"
+    content="Portafolio personal de un desarrollador de software: perfil profesional, habilidades, proyectos y contacto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="public/img/ico.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link href="public/css/output.css" rel="stylesheet">
+  <link href="portafolio/public/css/output.css" rel="stylesheet">
+  <style>
+    :root {
+      --header-offset: 5rem;
+    }
+
+    html {
+      scroll-padding-top: var(--header-offset);
+    }
+
+    section[id] {
+      scroll-margin-top: var(--header-offset);
+    }
+  </style>
+</head>
+
+<body
+  class="relative bg-slate-50 text-slate-900 antialiased min-h-screen font-[Manrope] overflow-x-hidden dark:bg-[#010409] dark:text-slate-100 before:content-[''] before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_top,#0ea5e9_0.5px,transparent_0.5px)] before:[background-size:120px_120px] before:opacity-0 dark:before:opacity-10 after:content-[''] after:pointer-events-none after:absolute after:inset-y-0 after:right-0 after:w-1/2 after:bg-gradient-to-l after:from-cyan-500/20 after:via-transparent after:to-transparent after:blur-3xl after:opacity-0 dark:after:opacity-100">
+  <a class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-slate-800 focus:text-white focus:px-4 focus:py-2 focus:rounded"
+    href="#inicio" data-i18n="skip">Skip to content</a>
+
+  <header
+    class="fixed top-0 left-0 w-full z-20 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl dark:border-white/10 dark:bg-[#050816]/80">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between gap-4 text-slate-700 dark:text-slate-200">
+      <div class="flex items-center gap-3">
+        <div
+          class="h-10 w-10 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 shadow-[0_0_25px_rgba(14,165,233,0.35)]">
+        </div>
+        <div>
+          <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="header.role">Systems Engineer</p>
+          <p class="text-lg font-semibold text-slate-900 dark:text-white" data-i18n="header.name">Full Name</p>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation" data-i18n="nav.aria" data-i18n-attr="aria-label"
+        class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-500 dark:text-slate-300">
+        <a class="relative transition-colors hover:text-cyan-600 dark:hover:text-cyan-400" href="#inicio"
+          data-i18n="nav.home">Home</a>
+        <a class="relative transition-colors hover:text-cyan-600 dark:hover:text-cyan-400" href="#sobre-mi"
+          data-i18n="nav.about">About</a>
+        <a class="relative transition-colors hover:text-cyan-600 dark:hover:text-cyan-400" href="#habilidades"
+          data-i18n="nav.skills">Skills</a>
+        <a class="relative transition-colors hover:text-cyan-600 dark:hover:text-cyan-400" href="#herramientas"
+          data-i18n="nav.tools">Tools</a>
+        <a class="relative transition-colors hover:text-cyan-600 dark:hover:text-cyan-400" href="#proyectos"
+          data-i18n="nav.projects">Projects</a>
+        <a class="relative transition-colors hover:text-cyan-600 dark:hover:text-cyan-400" href="#contacto"
+          data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="themeToggle"
+          class="h-10 w-10 rounded-full border border-slate-200/80 flex items-center justify-center text-slate-500 transition hover:border-cyan-500 hover:text-cyan-500 dark:border-white/10 dark:text-slate-300"
+          aria-label="Toggle theme" data-i18n="aria.themeToggle" data-i18n-attr="aria-label">
+          <span aria-hidden="true" id="themeIcon">☾</span>
+        </button>
+        <button id="languageToggle"
+          class="h-10 w-10 rounded-full border border-slate-200/80 flex items-center justify-center text-slate-500 transition hover:border-cyan-500 hover:text-cyan-500 dark:border-white/10 dark:text-slate-300"
+          aria-label="Switch language" data-i18n="aria.languageToggle" data-i18n-attr="aria-label">
+          <span aria-hidden="true" id="languageIcon">EN</span>
+        </button>
+        <button
+          class="md:hidden h-10 w-10 rounded-full border border-slate-200/80 flex items-center justify-center text-slate-500 transition hover:border-cyan-500 hover:text-cyan-500 dark:border-white/10 dark:text-slate-300"
+          aria-label="Open menu" data-i18n="aria.mobileMenu" data-i18n-attr="aria-label"
+          onclick="document.getElementById('mobileNav').classList.toggle('hidden')">
+          ☰
+        </button>
+      </div>
+    </div>
+    <nav id="mobileNav"
+      class="md:hidden hidden border-t border-slate-200/80 bg-white/95 backdrop-blur px-6 pb-4 text-sm font-semibold text-slate-600 dark:border-white/10 dark:bg-[#050816]/95 dark:text-slate-200">
+      <div class="flex flex-col gap-3 pt-3">
+        <a class="hover:text-cyan-600 transition-colors dark:hover:text-cyan-400" href="#inicio"
+          data-i18n="nav.home">Home</a>
+        <a class="hover:text-cyan-600 transition-colors dark:hover:text-cyan-400" href="#sobre-mi"
+          data-i18n="nav.about">About</a>
+        <a class="hover:text-cyan-600 transition-colors dark:hover:text-cyan-400" href="#habilidades"
+          data-i18n="nav.skills">Skills</a>
+        <a class="hover:text-cyan-600 transition-colors dark:hover:text-cyan-400" href="#herramientas"
+          data-i18n="nav.tools">Tools</a>
+        <a class="hover:text-cyan-600 transition-colors dark:hover:text-cyan-400" href="#proyectos"
+          data-i18n="nav.projects">Projects</a>
+        <a class="hover:text-cyan-600 transition-colors dark:hover:text-cyan-400" href="#contacto"
+          data-i18n="nav.contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="relative z-10 pt-28 pb-16">
+    <section id="inicio"
+      class="max-w-6xl mx-auto px-6 min-h-[calc(100vh-120px)] flex flex-col items-center justify-center text-center text-slate-700 dark:text-slate-300">
+      <div class="space-y-8 w-full" data-animate>
+        <p class="text-xs md:text-sm uppercase tracking-[0.5em] text-cyan-500" data-i18n="hero.badge">Software Developer
+        </p>
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-slate-900 dark:text-white"
+          data-i18n="hero.title">
+          Clean, scalable, user-focused solutions.</h1>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto text-slate-600 dark:text-slate-300" data-i18n="hero.description">
+          Simple, dependable interfaces built with modern engineering.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="#proyectos"
+            class="px-6 py-3 rounded-full bg-slate-900 text-white font-semibold shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 dark:bg-cyan-500 dark:text-slate-950 dark:shadow-cyan-500/30"
+            data-i18n="hero.ctaPrimary">View projects</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="max-w-5xl mx-auto px-6 mt-24 space-y-6" data-animate>
+      <div class="flex items-center gap-3">
+        <div class="h-10 w-1.5 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full"></div>
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white" data-i18n="about.title">About Me</h2>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-[minmax(240px,320px),1fr]">
+
+        <article
+          class="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white/95 p-6 max-w-[320px] mx-auto lg:mx-0 shadow-[0_20px_50px_rgba(15,23,42,0.06)] dark:border-white/10 dark:bg-slate-900/70 dark:shadow-[0_30px_100px_rgba(15,23,42,0.45)]">
+          <div class="absolute -left-8 -top-8 h-40 w-40 rounded-full bg-cyan-500/20 blur-3xl dark:bg-cyan-500/30" aria-hidden="true"></div>
+          <div class="relative space-y-4">
+            <p class="text-sm uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400" data-i18n="about.profileLabel">Profile</p>
+            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300" data-i18n="about.profileText">I am a results-driven systems engineer with experience building APIs, crisp interfaces, and maintainable architectures. I enjoy turning complex requirements into intuitive user experiences.</p>
+          </div>
+        </article>
+
+        <div class="space-y-6">
+          <article class="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white/95 p-8 shadow-[0_25px_65px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-slate-900/70 dark:shadow-[0_35px_120px_rgba(15,23,42,0.45)]">
+            <p class="text-sm uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400" data-i18n="about.interestsLabel">Interests</p>
+            <p class="mt-3 text-base leading-relaxed text-slate-600 dark:text-slate-300" data-i18n="about.interestsText">Home automation, business system development, 3D design and modeling, and continuous learning of new software technologies.</p>
+          </article>
+
+          <article class="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white/95 p-8 shadow-[0_25px_65px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-slate-900/70 dark:shadow-[0_35px_120px_rgba(15,23,42,0.45)]">
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500 dark:text-slate-300" data-i18n="about.calloutsTitle">Focus areas</p>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-slate-600 dark:text-slate-200">
+              <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-500"></span><span data-i18n="about.callout1">Database modeling and SQL Server-first schemas.</span></li>
+              <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-500"></span><span data-i18n="about.callout2">Backend services with PHP, Java, .NET, and Express.</span></li>
+              <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-500"></span><span data-i18n="about.callout3">AWS deployments leveraging EC2, Elastic Beanstalk, and RDS.</span></li>
+              <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-500"></span><span data-i18n="about.callout4">Frontend services and UI engineering.</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades" class="max-w-5xl mx-auto px-6 mt-24 space-y-6" data-animate>
+      <div class="flex items-center gap-3">
+        <div class="h-10 w-1.5 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full"></div>
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white" data-i18n="skills.title">Skills</h2>
+      </div>
+      <div class="grid gap-4 md:grid-cols-2">
+        <div
+          class="group flex items-start gap-4 rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-[0_15px_45px_rgba(15,23,42,0.08)] transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-slate-900/70 dark:shadow-[0_25px_80px_rgba(15,23,42,0.45)]">
+          <span
+            class="mt-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-500/10 text-xs font-semibold tracking-[0.3em] text-cyan-600 dark:text-cyan-300">01</span>
+          <p class="text-base leading-relaxed text-slate-700 dark:text-slate-200" data-i18n="skills.item1">Backend
+            development</p>
+        </div>
+        <div
+          class="group flex items-start gap-4 rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-[0_15px_45px_rgba(15,23,42,0.08)] transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-slate-900/70 dark:shadow-[0_25px_80px_rgba(15,23,42,0.45)]">
+          <span
+            class="mt-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-500/10 text-xs font-semibold tracking-[0.3em] text-cyan-600 dark:text-cyan-300">02</span>
+          <p class="text-base leading-relaxed text-slate-700 dark:text-slate-200" data-i18n="skills.item2">REST APIs</p>
+        </div>
+        <div
+          class="group flex items-start gap-4 rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-[0_15px_45px_rgba(15,23,42,0.08)] transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-slate-900/70 dark:shadow-[0_25px_80px_rgba(15,23,42,0.45)]">
+          <span
+            class="mt-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-500/10 text-xs font-semibold tracking-[0.3em] text-cyan-600 dark:text-cyan-300">03</span>
+          <p class="text-base leading-relaxed text-slate-700 dark:text-slate-200" data-i18n="skills.item3">Relational
+            databases &amp; SQL</p>
+        </div>
+        <div
+          class="group flex items-start gap-4 rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-[0_15px_45px_rgba(15,23,42,0.08)] transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-slate-900/70 dark:shadow-[0_25px_80px_rgba(15,23,42,0.45)]">
+          <span
+            class="mt-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-500/10 text-xs font-semibold tracking-[0.3em] text-cyan-600 dark:text-cyan-300">04</span>
+          <p class="text-base leading-relaxed text-slate-700 dark:text-slate-200" data-i18n="skills.item4">AWS
+            fundamentals &amp; web deployment</p>
+        </div>
+        <div
+          class="group flex items-start gap-4 rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-[0_15px_45px_rgba(15,23,42,0.08)] transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-slate-900/70 dark:shadow-[0_25px_80px_rgba(15,23,42,0.45)]">
+          <span
+            class="mt-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-500/10 text-xs font-semibold tracking-[0.3em] text-cyan-600 dark:text-cyan-300">05</span>
+          <p class="text-base leading-relaxed text-slate-700 dark:text-slate-200" data-i18n="skills.item6">Frontend
+            development</p>
+        </div>
+        <div
+          class="group flex items-start gap-4 rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-[0_15px_45px_rgba(15,23,42,0.08)] transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-slate-900/70 dark:shadow-[0_25px_80px_rgba(15,23,42,0.45)]">
+          <span
+            class="mt-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-500/10 text-xs font-semibold tracking-[0.3em] text-cyan-600 dark:text-cyan-300">06</span>
+          <p class="text-base leading-relaxed text-slate-700 dark:text-slate-200" data-i18n="skills.item5">Version
+            control</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="herramientas" class="max-w-5xl mx-auto px-6 mt-24 space-y-6" data-animate>
+      <div class="flex items-center gap-3">
+        <div class="h-10 w-1.5 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full"></div>
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white" data-i18n="tools.title">Tools &amp; Technologies
+        </h2>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2">
+        <article
+          class="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-[0_15px_55px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-[#0f172a]/70 dark:shadow-[0_35px_120px_rgba(15,23,42,0.5)]">
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <span
+                class="h-12 w-12 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-600 dark:bg-cyan-500/10">
+                <i class="devicon-java-plain text-2xl" aria-hidden="true"></i>
+              </span>
+              <div>
+                <p class="text-sm uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400"
+                  data-i18n="tools.languages">Languages</p>
+                <p class="text-base text-slate-700 dark:text-slate-200" data-i18n="tools.languagesList">Java, C#, PHP,
+                  SQL, JavaScript</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 border-t border-slate-200/70 pt-4 dark:border-white/10">
+              <span
+                class="h-12 w-12 rounded-2xl bg-slate-100 flex items-center justify-center text-cyan-600 dark:bg-white/5">
+                <i class="devicon-nodejs-plain text-2xl" aria-hidden="true"></i>
+              </span>
+              <div>
+                <p class="text-sm uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400"
+                  data-i18n="tools.runtime">Runtime / Environments</p>
+                <p class="text-base text-slate-700 dark:text-slate-200" data-i18n="tools.runtimeList">Node.js</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-[0_15px_55px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-[#0f172a]/70 dark:shadow-[0_35px_120px_rgba(15,23,42,0.5)]">
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <span
+                class="h-12 w-12 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-600 dark:bg-cyan-500/10">
+                <i class="devicon-html5-plain text-2xl" aria-hidden="true"></i>
+              </span>
+              <div>
+                <p class="text-sm uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400"
+                  data-i18n="tools.frontend">Frontend</p>
+                <p class="text-base text-slate-700 dark:text-slate-200" data-i18n="tools.frontendList">HTML, CSS</p>
+              </div>
+            </div>
+            <div class="flex flex-1 items-center gap-4 border-t border-slate-200/70 pt-4 dark:border-white/10">
+              <span
+                class="h-12 w-12 rounded-2xl bg-slate-100 flex items-center justify-center text-cyan-600 dark:bg-white/5">
+                <i class="devicon-laravel-plain text-2xl" aria-hidden="true"></i>
+              </span>
+              <div class="flex-1">
+                <p class="text-sm uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400"
+                  data-i18n="tools.frameworks">Frameworks</p>
+                <ul class="mt-2 grid grid-cols-2 gap-2 text-sm text-slate-600 dark:text-slate-300">
+                  <li class="rounded-full border border-slate-200/60 px-3 py-1 text-center dark:border-white/10"
+                    data-i18n="tools.frameworkItem1">Express.js</li>
+                  <li class="rounded-full border border-slate-200/60 px-3 py-1 text-center dark:border-white/10"
+                    data-i18n="tools.frameworkItem2">Laravel</li>
+                  <li class="rounded-full border border-slate-200/60 px-3 py-1 text-center dark:border-white/10"
+                    data-i18n="tools.frameworkItem3">.NET Framework</li>
+                  <li class="rounded-full border border-slate-200/60 px-3 py-1 text-center dark:border-white/10"
+                    data-i18n="tools.frameworkItem4">Tailwind CSS</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-[0_15px_55px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-[#0f172a]/70 dark:shadow-[0_35px_120px_rgba(15,23,42,0.5)]">
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <span
+                class="h-12 w-12 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-600 dark:bg-cyan-500/10">
+                <i class="devicon-mysql-plain text-2xl" aria-hidden="true"></i>
+              </span>
+              <div>
+                <p class="text-sm uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400"
+                  data-i18n="tools.databases">Databases</p>
+                <p class="text-base text-slate-700 dark:text-slate-200" data-i18n="tools.databasesList">SQL Server</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 border-t border-slate-200/70 pt-4 dark:border-white/10">
+              <span
+                class="h-12 w-12 rounded-2xl bg-slate-100 flex items-center justify-center text-cyan-600 dark:bg-white/5">
+                <i class="devicon-amazonwebservices-plain-wordmark text-2xl" aria-hidden="true"></i>
+              </span>
+              <div>
+                <p class="text-sm uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400"
+                  data-i18n="tools.cloud">Cloud (AWS)</p>
+                <p class="text-base text-slate-700 dark:text-slate-200" data-i18n="tools.cloudList">EC2, Elastic
+                  Beanstalk, S3, RDS, ELB</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-[0_15px_55px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-[#0f172a]/70 dark:shadow-[0_35px_120px_rgba(15,23,42,0.5)]">
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <span
+                class="h-12 w-12 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-600 dark:bg-cyan-500/10">
+                <i class="devicon-git-plain text-2xl" aria-hidden="true"></i>
+              </span>
+              <div>
+                <p class="text-sm uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400"
+                  data-i18n="tools.versionControl">Version control</p>
+                <p class="text-base text-slate-700 dark:text-slate-200" data-i18n="tools.versionControlList">Git,
+                  GitHub</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 border-t border-slate-200/70 pt-4 dark:border-white/10">
+              <span
+                class="h-12 w-12 rounded-2xl bg-slate-100 flex items-center justify-center text-cyan-600 dark:bg-white/5">
+                <i class="devicon-docker-plain text-2xl" aria-hidden="true"></i>
+              </span>
+              <div>
+                <p class="text-sm uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400"
+                  data-i18n="tools.containers">Containers</p>
+                <p class="text-base text-slate-700 dark:text-slate-200" data-i18n="tools.containersList">Docker</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-[0_15px_55px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-[#0f172a]/70 dark:shadow-[0_35px_120px_rgba(15,23,42,0.5)]">
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <span
+                class="h-12 w-12 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-600 dark:bg-cyan-500/10">
+                <i class="devicon-linux-plain text-2xl" aria-hidden="true"></i>
+              </span>
+              <div>
+                <p class="text-sm uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400"
+                  data-i18n="tools.operatingSystems">Operating systems</p>
+                <p class="text-base text-slate-700 dark:text-slate-200" data-i18n="tools.operatingSystemsList">Linux</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 border-t border-slate-200/70 pt-4 dark:border-white/10">
+              <span
+                class="h-12 w-12 rounded-2xl bg-slate-100 flex items-center justify-center text-cyan-600 dark:bg-white/5">
+                <i class="devicon-visualstudio-plain text-2xl" aria-hidden="true"></i>
+              </span>
+              <div>
+                <p class="text-sm uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400" data-i18n="tools.ides">
+                  IDEs</p>
+                <p class="text-base text-slate-700 dark:text-slate-200" data-i18n="tools.idesList">Visual Studio</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-[0_15px_55px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-[#0f172a]/70 dark:shadow-[0_35px_120px_rgba(15,23,42,0.5)]">
+          <div class="flex items-center gap-4">
+            <span
+              class="h-12 w-12 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-600 dark:bg-cyan-500/10">
+              <i class="devicon-jira-plain text-2xl" aria-hidden="true"></i>
+            </span>
+            <div>
+              <p class="text-sm uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400"
+                data-i18n="tools.methodology">Methodology</p>
+              <p class="text-base text-slate-700 dark:text-slate-200" data-i18n="tools.methodologyList">Scrum</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="proyectos" class="max-w-5xl mx-auto px-6 mt-24 space-y-6" data-animate>
+      <div class="flex items-center gap-3">
+        <div class="h-10 w-1.5 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full"></div>
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white" data-i18n="projects.title">
+          Selected Academic Projects
+        </h2>
+      </div>
+
+      <div class="grid gap-8">
+
+        <!-- Proyecto 1 -->
+        <article
+          class="group overflow-hidden rounded-[32px] border border-slate-200 bg-white/95 shadow-[0_25px_70px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 dark:border-white/10 dark:bg-slate-900/70 dark:shadow-[0_35px_120px_rgba(15,23,42,0.4)] flex flex-col gap-0 md:flex-row">
+          <figure
+            class="relative w-full overflow-hidden border-b border-slate-200/70 dark:border-white/10 lg:h-full lg:w-1/2 lg:border-b-0 lg:border-r"
+            style="aspect-ratio: 16 / 9;">
+            <img src="public/img/portafolio.png" alt="Mockup de Aplicación Web Personal"
+              class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+          </figure>
+          <div class="flex flex-1 flex-col gap-5 p-6">
+            <div class="space-y-2">
+              <h3 class="text-xl font-semibold text-slate-900 dark:text-white" data-i18n="project1.name">Portfolio
+                Website</h3>
+              <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300" data-i18n="project1.description">
+                Personal website that highlights projects and technical skills with a responsive layout and clean
+                frontend
+                structure.</p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a href=" https://richardrc1994.github.io/portafolio/" target="_blank" rel="noreferrer"
+                class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-slate-900 text-white text-sm font-semibold shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-slate-900/30 dark:bg-cyan-500 dark:text-slate-950 dark:shadow-cyan-500/30"
+                data-i18n="projects.viewButton">Open project</a>
+              <a href="https://github.com/RichardRc1994/portafolio" target="_blank" rel="noreferrer"
+                class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-slate-200/70 bg-white/80 text-sm font-semibold text-slate-700 shadow-inner transition hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-slate-400/40 dark:border-white/20 dark:bg-transparent dark:text-white dark:shadow-none dark:hover:border-cyan-500/40 dark:focus:ring-cyan-500/30">
+                <span class="flex items-center gap-2">
+                  <i class="devicon-github-original text-base" aria-hidden="true"></i>
+                  <span data-i18n="projects.githubButton">View on GitHub</span>
+                </span>
+              </a>
+            </div>
+            <div class="flex flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-200">
+              <span
+                class="px-3 py-1 rounded-full border border-slate-200 bg-white flex items-center gap-2 dark:border-white/10 dark:bg-white/5"><i
+                  class="devicon-html5-plain text-base text-cyan-500"></i>HTML</span>
+              <span
+                class="px-3 py-1 rounded-full border border-slate-200 bg-white flex items-center gap-2 dark:border-white/10 dark:bg-white/5"><i
+                  class="devicon-tailwindcss-plain text-base text-cyan-500"></i>Tailwind CSS</span>
+              <span
+                class="px-3 py-1 rounded-full border border-slate-200 bg-white flex items-center gap-2 dark:border-white/10 dark:bg-white/5"><i
+                  class="devicon-nodejs-plain text-base text-cyan-500"></i>Node.js</span>
+              <span
+                class="px-3 py-1 rounded-full border border-slate-200 bg-white flex items-center gap-2 dark:border-white/10 dark:bg-white/5"><i
+                  class="devicon-express-original text-base text-cyan-500"></i>Express</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 2 -->
+        <article
+          class="group overflow-hidden rounded-[32px] border border-slate-200 bg-white/95 shadow-[0_25px_70px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 dark:border-white/10 dark:bg-slate-900/70 dark:shadow-[0_35px_120px_rgba(15,23,42,0.4)] flex flex-col gap-0 md:flex-row">
+          <figure
+            class="relative w-full overflow-hidden border-b border-slate-200/70 dark:border-white/10 lg:h-full lg:w-1/2 lg:border-b-0 lg:border-r"
+            style="aspect-ratio: 16 / 9;">
+            <img src="public/img/servisina.png" alt="Vista previa de ServiSina"
+              class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+          </figure>
+          <div class="flex flex-1 flex-col gap-5 p-6">
+            <div class="space-y-2">
+              <h3 class="text-xl font-semibold text-slate-900 dark:text-white">ServiSina</h3>
+              <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300" data-i18n="project2.description">
+                Web platform for service management that supports request intake, tracking, and administration with user
+                authentication and CRUD operations.</p>
+            </div>
+            <!--<div class="flex flex-wrap gap-3">
+              <a href="https://github.com/" target="_blank" rel="noreferrer"
+                class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-slate-900 text-white text-sm font-semibold shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-slate-900/30 dark:bg-cyan-500 dark:text-slate-950 dark:shadow-cyan-500/30"
+                data-i18n="projects.viewButton">Open project</a>
+              <a href="https://github.com/RichardRc1994/ServiSinaWeb" target="_blank" rel="noreferrer"
+                class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-slate-200/70 bg-white/80 text-sm font-semibold text-slate-700 shadow-inner transition hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-slate-400/40 dark:border-white/20 dark:bg-transparent dark:text-white dark:shadow-none dark:hover:border-cyan-500/40 dark:focus:ring-cyan-500/30">
+                <span class="flex items-center gap-2">
+                  <i class="devicon-github-original text-base" aria-hidden="true"></i>
+                  <span data-i18n="projects.githubButton">View on GitHub</span>
+                </span>
+              </a>
+            </div>-->
+            <div class="flex flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-200">
+              <span
+                class="px-3 py-1 rounded-full border border-slate-200 bg-white flex items-center gap-2 dark:border-white/10 dark:bg-white/5"><i
+                  class="devicon-html5-plain text-base text-cyan-500"></i>HTML</span>
+              <span
+                class="px-3 py-1 rounded-full border border-slate-200 bg-white flex items-center gap-2 dark:border-white/10 dark:bg-white/5"><i
+                  class="devicon-css3-plain text-base text-cyan-500"></i>CSS</span>
+              <span
+                class="px-3 py-1 rounded-full border border-slate-200 bg-white flex items-center gap-2 dark:border-white/10 dark:bg-white/5"><i
+                  class="devicon-mysql-plain text-base text-cyan-500"></i>SQL</span>
+              <span
+                class="px-3 py-1 rounded-full border border-slate-200 bg-white flex items-center gap-2 dark:border-white/10 dark:bg-white/5"><i
+                  class="devicon-php-plain text-base text-cyan-500"></i>PHP</span>
+              <span
+                class="px-3 py-1 rounded-full border border-slate-200 bg-white flex items-center gap-2 dark:border-white/10 dark:bg-white/5"><i
+                  class="devicon-javascript-plain text-base text-cyan-500"></i>JavaScript</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 3 -->
+        <article
+          class="group overflow-hidden rounded-[32px] border border-slate-200 bg-white/95 shadow-[0_25px_70px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 dark:border-white/10 dark:bg-slate-900/70 dark:shadow-[0_35px_120px_rgba(15,23,42,0.4)] flex flex-col gap-0 md:flex-row">
+          <figure
+            class="relative w-full overflow-hidden border-b border-slate-200/70 dark:border-white/10 lg:h-full lg:w-1/2 lg:border-b-0 lg:border-r"
+            style="aspect-ratio: 16 / 9;">
+            <img src="public/img/elrecetario.png" alt="Captura del sistema El Recetario"
+              class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+          </figure>
+          <div class="flex flex-1 flex-col gap-5 p-6">
+            <div class="space-y-2">
+              <h3 class="text-xl font-semibold text-slate-900 dark:text-white" data-i18n="project3.name">El Recetario
+              </h3>
+              <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300" data-i18n="project3.description">
+                Web platform for creating, storing, and sharing cooking recipes with a client-server architecture, user
+                management, secure authentication, persistent storage, and subscription workflows.</p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://elrecetario.cruzricardoah.com/" target="_blank" rel="noreferrer"
+                class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-slate-900 text-white text-sm font-semibold shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-slate-900/30 dark:bg-cyan-500 dark:text-slate-950 dark:shadow-cyan-500/30"
+                data-i18n="projects.viewButton">Open project</a>
+              <a href="https://github.com/RichardRc1994/ElRecetario" target="_blank" rel="noreferrer"
+                class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-slate-200/70 bg-white/80 text-sm font-semibold text-slate-700 shadow-inner transition hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-slate-400/40 dark:border-white/20 dark:bg-transparent dark:text-white dark:shadow-none dark:hover:border-cyan-500/40 dark:focus:ring-cyan-500/30">
+                <span class="flex items-center gap-2">
+                  <i class="devicon-github-original text-base" aria-hidden="true"></i>
+                  <span data-i18n="projects.githubButton">View on GitHub</span>
+                </span>
+              </a>
+            </div>
+            <div class="flex flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-200">
+              <span
+                class="px-3 py-1 rounded-full border border-slate-200 bg-white flex items-center gap-2 dark:border-white/10 dark:bg-white/5"><i
+                  class="devicon-tailwindcss-plain text-base text-cyan-500"></i>Tailwind CSS</span>
+              <span
+                class="px-3 py-1 rounded-full border border-slate-200 bg-white flex items-center gap-2 dark:border-white/10 dark:bg-white/5"><i
+                  class="devicon-nodejs-plain text-base text-cyan-500"></i>Node.js</span>
+              <span
+                class="px-3 py-1 rounded-full border border-slate-200 bg-white flex items-center gap-2 dark:border-white/10 dark:bg-white/5"><i
+                  class="devicon-express-original text-base text-cyan-500"></i>Express</span>
+              <span
+                class="px-3 py-1 rounded-full border border-slate-200 bg-white flex items-center gap-2 dark:border-white/10 dark:bg-white/5"><i
+                  class="devicon-mariadb-plain text-base text-cyan-500"></i>MariaDB</span>
+              <span
+                class="px-3 py-1 rounded-full border border-slate-200 bg-white flex items-center gap-2 dark:border-white/10 dark:bg-white/5"><i
+                  class="devicon-firebase-plain text-base text-cyan-500"></i>Firebase Auth</span>
+              <span
+                class="px-3 py-1 rounded-full border border-slate-200 bg-white flex items-center gap-2 dark:border-white/10 dark:bg-white/5"><i
+                  class="devicon-amazonwebservices-plain-wordmark text-base text-cyan-500"></i>AWS</span>
+            </div>
+          </div>
+        </article>
+
+
+      </div>
+    </section>
+
+    <section id="contacto" class="max-w-5xl mx-auto px-6 mt-24 space-y-6" data-animate>
+      <div class="flex items-center gap-3">
+        <div class="h-10 w-1.5 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full"></div>
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white" data-i18n="contact.title">Contact</h2>
+      </div>
+
+      <div
+        class="relative rounded-[40px] border border-slate-200/80 bg-white/70 p-1 dark:border-white/10 dark:bg-white/5">
+        <div
+          class="absolute inset-0 -z-10 rounded-[40px] bg-[radial-gradient(circle_at_top,#bae6fd,transparent)] opacity-70 blur-3xl dark:bg-[radial-gradient(circle_at_top,rgba(14,165,233,0.35),transparent)]">
+        </div>
+
+        <form action="https://formspree.io/f/xbdlnavv" method="POST" class="relative z-10">
+
+          <div
+            class="p-8 md:p-10 rounded-[32px] border border-slate-200/80 bg-white/95 shadow-[0_25px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl space-y-6 md:space-y-0 md:grid md:grid-cols-2 md:gap-6 dark:border-white/15 dark:bg-[#0d1117]/90 dark:shadow-[0_25px_120px_rgba(14,165,233,0.25)]">
+
+            <div class="space-y-2 md:col-span-1">
+              <label for="nombre" class="text-sm text-slate-600 dark:text-slate-300" data-i18n="contact.fullNameLabel">
+                Full name
+              </label>
+              <input id="nombre" name="nombre" type="text" required placeholder="Full name"
+                data-i18n="contact.fullNamePlaceholder" data-i18n-attr="placeholder"
+                class="w-full rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-3 text-slate-700 shadow-inner transition focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-white dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-100 dark:focus:ring-offset-transparent">
+            </div>
+
+            <div class="space-y-2 md:col-span-1">
+              <label for="correo" class="text-sm text-slate-600 dark:text-slate-300" data-i18n="contact.emailLabel">
+                Email
+              </label>
+              <input id="correo" name="correo" type="email" required placeholder="email@example.com"
+                data-i18n="contact.emailPlaceholder" data-i18n-attr="placeholder"
+                class="w-full rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-3 text-slate-700 shadow-inner transition focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-white dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-100 dark:focus:ring-offset-transparent">
+            </div>
+
+            <div class="space-y-2 md:col-span-2">
+              <label for="mensaje" class="text-sm text-slate-600 dark:text-slate-300" data-i18n="contact.messageLabel">
+                Message
+              </label>
+              <textarea id="mensaje" name="mensaje" required placeholder="Hello, I'd like to talk about..."
+                data-i18n="contact.messagePlaceholder" data-i18n-attr="placeholder"
+                class="w-full h-32 rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-3 text-slate-700 shadow-inner transition focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-white dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-100 dark:focus:ring-offset-transparent"></textarea>
+            </div>
+
+            <button type="submit"
+              class="w-full md:col-span-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold tracking-wide shadow-lg shadow-cyan-500/30 transition hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-transparent"
+              data-i18n="contact.submit">
+              Send message
+            </button>
+
+            <div
+              class="md:col-span-2 flex flex-col gap-4 rounded-2xl border border-slate-200/70 bg-slate-50/80 p-4 text-sm text-slate-600 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
+              <div class="flex flex-wrap gap-3">
+                <a href="mailto:cruz.ricardo.ah@gmail.com"
+                  class="flex-1 min-w-[140px] rounded-2xl border border-transparent bg-white px-4 py-3 text-center font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-200 hover:ring-2 hover:ring-cyan-200/60 dark:bg-white/5 dark:text-white dark:hover:border-cyan-500/40 dark:hover:ring-2 dark:hover:ring-cyan-500/30">
+                  <span class="flex items-center justify-center gap-2">
+                    <i class="devicon-google-plain text-lg text-cyan-500"></i>
+                    <span data-i18n="contact.emailBtn">Email</span>
+                  </span>
+                </a>
+
+                <a href="https://github.com/RichardRc1994" target="_blank" rel="noreferrer"
+                  class="flex-1 min-w-[140px] rounded-2xl border border-transparent bg-white px-4 py-3 text-center font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-200 hover:ring-2 hover:ring-cyan-200/60 dark:bg-white/5 dark:text-white dark:hover:border-cyan-500/40 dark:hover:ring-2 dark:hover:ring-cyan-500/30">
+                  <span class="flex items-center justify-center gap-2">
+                    <i class="devicon-github-original text-lg text-cyan-500"></i>
+                    <span data-i18n="contact.githubBtn">GitHub</span>
+                  </span>
+                </a>
+
+                <a href="https://www.linkedin.com/in/richardrc1994/" target="_blank" rel="noreferrer"
+                  class="flex-1 min-w-[140px] rounded-2xl border border-transparent bg-white px-4 py-3 text-center font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-200 hover:ring-2 hover:ring-cyan-200/60 dark:bg-white/5 dark:text-white dark:hover:border-cyan-500/40 dark:hover:ring-2 dark:hover:ring-cyan-500/30">
+                  <span class="flex items-center justify-center gap-2">
+                    <i class="devicon-linkedin-plain text-lg text-cyan-500"></i>
+                    <span data-i18n="contact.linkedinBtn">LinkedIn</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="public/js/lang.en.js"></script>
+  <script src="public/js/lang.es.js"></script>
+  <script src="public/js/script.js"></script>
+</body>
+
+</html>
